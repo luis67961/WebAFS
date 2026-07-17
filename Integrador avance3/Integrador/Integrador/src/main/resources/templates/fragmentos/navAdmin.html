@@ -1,0 +1,64 @@
+<nav id="sidebar" th:fragment="navAdmin" class="d-flex flex-column p-3 bg-white border-end h-100" style="width: 250px; min-height: 100vh;">
+   
+    <div class="sidebar-header mb-4">
+        <h5 class="fw-bold text-success mb-0">AFS - Sistema</h5>
+        <small class="text-secondary fw-medium">Panel Admin</small>
+    </div>
+
+    <ul class="nav nav-pills flex-column mb-auto gap-2 w-100">
+        <li class="nav-item">
+            <a th:href="@{/admin}" class="nav-link text-dark d-flex align-items-center gap-3 py-2 px-3 transition-all">
+                <i class="bi bi-speedometer2 fs-5 text-success"></i> <span>Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/pedidosAdmin}" class="nav-link text-dark d-flex align-items-center gap-3 py-2 px-3 transition-all">
+                <i class="bi bi-cart fs-5 text-success"></i> <span>Pedidos</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/productos}" class="nav-link text-dark d-flex align-items-center gap-3 py-2 px-3 transition-all">
+                <i class="bi bi-box-seam fs-5 text-success"></i> <span>Productos</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/clientes}" class="nav-link text-dark d-flex align-items-center gap-3 py-2 px-3 transition-all">
+                <i class="bi bi-people fs-5 text-success"></i> <span>Clientes</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/visitaTecnica}" class="nav-link text-dark d-flex align-items-center gap-3 py-2 px-3 transition-all">
+                <i class="bi bi-geo-alt fs-5 text-success"></i> <span>Visitas</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/reportes}" class="nav-link text-dark d-flex align-items-center gap-3 py-2 px-3 transition-all">
+                <i class="bi bi-bar-chart-line-fill fs-5 text-success"></i> <span>Reportes</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/pagos}" class="nav-link text-dark d-flex align-items-center gap-3 py-2 px-3 transition-all">
+                <i class="bi bi-credit-card fs-5 text-success"></i> <span>Pagos</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="sidebar-footer pt-3 border-top mt-4 w-100">
+        <p class="text-secondary small fw-medium mb-2" style="cursor: pointer;">Cambiar de rol</p>
+        <a th:href="@{/}" class="text-decoration-none">
+            <p class="text-danger small fw-bold mb-0 d-flex align-items-center gap-2">
+                <i class="bi bi-box-arrow-left"></i> Cerrar sesión
+            </p>
+        </a>
+    </div>
+
+    <style>
+        .nav-link.text-dark:hover {
+            background-color: #f8f9fa;
+            color: #198754 !important;
+        }
+        .nav-link.active i {
+            color: #ffffff !important;
+        }
+    </style>
+</nav>

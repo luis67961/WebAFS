@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<!-- Fragmento OffCanvas -->
+<div th:fragment="notiOffCanvas"> 
+
+<div class="offcanvas offcanvas-end"
+     tabindex="-1"
+     id="notifOffcanvas"
+     aria-labelledby="notifOffcanvasLabel">
+
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="notifOffcanvasLabel">
+      Notificaciones
+    </h5>
+
+    <button type="button" class="btn-close"
+            data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+
+    <div class="notif-card">
+      <h6>VISITA TECNICA APROBADA</h6>
+      <p>en alimentos avícolas</p>
+      <p>20/20/2026</p>
+    </div>
+
+    <div class="notif-card">
+      <h6>VISITA TECNICA APROBADA</h6>
+      <p>en alimentos avícolas</p>
+      <p>20/10/2026</p>
+    </div>
+
+    <div class="notif-card">
+      <h6>VISITA TECNICA APROBADA</h6>
+      <p>en alimentos avícolas</p>
+      <p>20/10/2026</p>
+    </div>
+
+  </div>
+</div>
+</div>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos Admin</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" th:href="@{/estilos/navAdmin.css}">
+</head>
+
+<body class="bg-light">
+
+<div class="container-fluid">
+    <div class="row g-0">
+
+        <aside class="col-12 col-md-3 col-lg-2 border-end bg-white min-vh-100">
+            <div th:replace="fragmentos/navAdmin :: navAdmin"></div>
+        </aside>
+
+        <main class="col-12 col-md-9 col-lg-10 p-4 p-lg-5 content">
+
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                <h2 class="fw-bold text-success mb-0">Productos</h2>
+                
+                <div class="d-flex flex-wrap align-items-center gap-3">
+                    <div class="input-group shadow-sm rounded-pill overflow-hidden" style="max-width: 300px;">
+                        <span class="input-group-text bg-white border-0 ps-3">
+                            <i class="bi bi-search text-success"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 shadow-none bg-white py-2" placeholder="Buscar producto...">
+                    </div>
+                    
+                    <button class="btn btn-success rounded-pill px-4 shadow-sm fw-bold d-flex align-items-center gap-2">
+                        <i class="bi bi-plus-lg"></i> Agregar producto
+                    </button>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <ul class="nav nav-pills gap-2">
+                    <li class="nav-item">
+                        <button class="nav-link active bg-success text-white rounded-pill px-4 shadow-sm" data-categoria="avicola">Avícola</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link text-dark bg-white border rounded-pill px-4 hover-shadow" data-categoria="crecimiento">Crecimiento</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link text-dark bg-white border rounded-pill px-4 hover-shadow" data-categoria="engorde">Engorde</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link text-dark bg-white border rounded-pill px-4 hover-shadow" data-categoria="otros">Otros</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
+
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 bg-white overflow-hidden">
+                        <img src="https://lorosyguacamayos.com.ar/wp-content/uploads/cuales-son-los-nutrientes-necesarios-para-las-aves-1024x1024.webp" 
+                             class="card-img-top object-fit-cover border-bottom" style="height: 200px;" alt="INICIO PREMIUM">
+                        
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold text-dark mb-1">INICIO PREMIUM</h5>
+                            <small class="text-secondary d-block mb-3 fw-medium">AFS-INI</small>
+                            
+                            <div class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3 py-2 w-100 text-start fs-6">
+                                STOCK: <strong>1240 KG</strong>
+                            </div>
+                        </div>
+
+                        <div class="card-footer bg-light border-top-0 p-3 d-flex flex-column gap-3">
+                            <div class="text-muted fw-medium small text-center">Disponible: 1240 KG</div>
+                            
+                            <div class="btn-group w-100 shadow-sm rounded-pill overflow-hidden">
+                                <button class="btn btn-white border border-end-0 py-2" title="Aumentar Stock">
+                                    <i class="bi bi-plus text-success fs-5 lh-1"></i>
+                                </button>
+                                <button class="btn btn-white border py-2" title="Reducir Stock">
+                                    <i class="bi bi-dash text-warning fs-5 lh-1"></i>
+                                </button>
+                                <button class="btn btn-white border border-start-0 py-2" title="Eliminar">
+                                    <i class="bi bi-trash text-danger fs-5 lh-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 bg-white overflow-hidden">
+                        <img src="https://lorosyguacamayos.com.ar/wp-content/uploads/cuales-son-los-nutrientes-necesarios-para-las-aves-1024x1024.webp" 
+                             class="card-img-top object-fit-cover border-bottom" style="height: 200px;" alt="INICIO PREMIUM">
+                        
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold text-dark mb-1">INICIO PREMIUM</h5>
+                            <small class="text-secondary d-block mb-3 fw-medium">AFS-INI</small>
+                            
+                            <div class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3 py-2 w-100 text-start fs-6">
+                                STOCK: <strong>1240 KG</strong>
+                            </div>
+                        </div>
+
+                        <div class="card-footer bg-light border-top-0 p-3 d-flex flex-column gap-3">
+                            <div class="text-muted fw-medium small text-center">Disponible: 1240 KG</div>
+                            
+                            <div class="btn-group w-100 shadow-sm rounded-pill overflow-hidden">
+                                <button class="btn btn-white border border-end-0 py-2">
+                                    <i class="bi bi-plus text-success fs-5 lh-1"></i>
+                                </button>
+                                <button class="btn btn-white border py-2">
+                                    <i class="bi bi-dash text-warning fs-5 lh-1"></i>
+                                </button>
+                                <button class="btn btn-white border border-start-0 py-2">
+                                    <i class="bi bi-trash text-danger fs-5 lh-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 bg-white overflow-hidden">
+                        <img src="https://lorosyguacamayos.com.ar/wp-content/uploads/cuales-son-los-nutrientes-necesarios-para-las-aves-1024x1024.webp" 
+                             class="card-img-top object-fit-cover border-bottom" style="height: 200px;" alt="INICIO PREMIUM">
+                        
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold text-dark mb-1">INICIO PREMIUM</h5>
+                            <small class="text-secondary d-block mb-3 fw-medium">AFS-INI</small>
+                            
+                            <div class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3 py-2 w-100 text-start fs-6">
+                                STOCK: <strong>1240 KG</strong>
+                            </div>
+                        </div>
+
+                        <div class="card-footer bg-light border-top-0 p-3 d-flex flex-column gap-3">
+                            <div class="text-muted fw-medium small text-center">Disponible: 1240 KG</div>
+                            
+                            <div class="btn-group w-100 shadow-sm rounded-pill overflow-hidden">
+                                <button class="btn btn-white border border-end-0 py-2">
+                                    <i class="bi bi-plus text-success fs-5 lh-1"></i>
+                                </button>
+                                <button class="btn btn-white border py-2">
+                                    <i class="bi bi-dash text-warning fs-5 lh-1"></i>
+                                </button>
+                                <button class="btn btn-white border border-start-0 py-2">
+                                    <i class="bi bi-trash text-danger fs-5 lh-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 bg-white overflow-hidden">
+                        <img src="https://lorosyguacamayos.com.ar/wp-content/uploads/cuales-son-los-nutrientes-necesarios-para-las-aves-1024x1024.webp" 
+                             class="card-img-top object-fit-cover border-bottom" style="height: 200px;" alt="INICIO PREMIUM">
+                        
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold text-dark mb-1">INICIO PREMIUM</h5>
+                            <small class="text-secondary d-block mb-3 fw-medium">AFS-INI</small>
+                            
+                            <div class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3 py-2 w-100 text-start fs-6">
+                                STOCK: <strong>1240 KG</strong>
+                            </div>
+                        </div>
+
+                        <div class="card-footer bg-light border-top-0 p-3 d-flex flex-column gap-3">
+                            <div class="text-muted fw-medium small text-center">Disponible: 1240 KG</div>
+                            
+                            <div class="btn-group w-100 shadow-sm rounded-pill overflow-hidden">
+                                <button class="btn btn-white border border-end-0 py-2">
+                                    <i class="bi bi-plus text-success fs-5 lh-1"></i>
+                                </button>
+                                <button class="btn btn-white border py-2">
+                                    <i class="bi bi-dash text-warning fs-5 lh-1"></i>
+                                </button>
+                                <button class="btn btn-white border border-start-0 py-2">
+                                    <i class="bi bi-trash text-danger fs-5 lh-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    .btn-white { background-color: #ffffff; transition: background-color 0.2s ease; }
+    .btn-white:hover { background-color: #f8f9fa; }
+</style>
+
+</body>
+</html>

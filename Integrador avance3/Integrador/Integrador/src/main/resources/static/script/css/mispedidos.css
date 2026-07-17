@@ -1,0 +1,60 @@
+.hover-card {
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+        }
+
+        /* Estilos del Tracking Box (Stepper) */
+        .tracking-box.horizontal {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+        }
+        .tracking-box.horizontal::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 10%;
+            width: 80%;
+            height: 4px;
+            background: #e9ecef;
+            z-index: 1;
+            border-radius: 4px;
+        }
+        .step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6c757d;
+            font-weight: 600;
+            flex: 1;
+            min-width: 100px;
+        }
+        .step::before {
+            content: '';
+            display: block;
+            width: 34px;
+            height: 34px;
+            background: #e9ecef;
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            border: 6px solid #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        /* Color verde cuando el paso está activo */
+        .step.active {
+            color: #198754;
+        }
+        .step.active::before {
+            background: #198754;
+            border-color: #d1e7dd;
+        }

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos Admin</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" th:href="@{/estilos/navAdmin.css}">
+    <link rel="stylesheet" th:href="@{/script/estilos/pedidos.css}">
+</head>
+
+<body class="bg-light">
+
+<div class="wrapper d-flex">
+
+    <div class="sidebar-wrapper" style="width: 250px; flex-shrink: 0;">
+        <div th:replace="fragmentos/navAdmin :: navAdmin"></div>
+    </div>
+
+    <main class="content flex-grow-1 p-4 p-lg-5">
+
+        <div class="top-bar d-flex justify-content-between align-items-center mb-5">
+            <div class="search-container input-group shadow-sm rounded-pill overflow-hidden bg-white" style="max-width: 400px;">
+                <span class="input-group-text bg-white border-0 ps-4 text-success">
+                    <i class="bi bi-search"></i>
+                </span>
+                <input type="text" class="search-input form-control border-0 shadow-none py-2 bg-white" placeholder="Buscar pedidos, clientes...">
+            </div>
+        </div>
+
+        <div class="pedidos-container">
+
+            <div class="pedidos-header d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold text-success mb-0">Pedidos</h2>
+                <button class="btn btn-success btn-crear rounded-pill px-4 py-2 shadow-sm fw-bold">
+                    <i class="bi bi-plus-lg"></i> Crear pedido
+                </button>
+            </div>
+
+            <div class="stats-grid row g-4 mb-5">
+                <div class="stat-card col-12 col-sm-6 col-xl-3">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-3 bg-white d-flex flex-row align-items-center gap-3">
+                        <div class="stat-icon bg-primary bg-opacity-10 text-primary rounded-4 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                            <i class="bi bi-cart3 fs-4"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value d-block fw-bold fs-4">248</span>
+                            <span class="stat-label text-secondary small">Total pedidos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card col-12 col-sm-6 col-xl-3">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-3 bg-white d-flex flex-row align-items-center gap-3">
+                        <div class="stat-icon bg-warning bg-opacity-10 text-warning rounded-4 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                            <i class="bi bi-clock-history fs-4"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value d-block fw-bold fs-4">12</span>
+                            <span class="stat-label text-secondary small">Pendientes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card col-12 col-sm-6 col-xl-3">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-3 bg-white d-flex flex-row align-items-center gap-3">
+                        <div class="stat-icon bg-success bg-opacity-10 text-success rounded-4 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                            <i class="bi bi-check-circle fs-4"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value d-block fw-bold fs-4">221</span>
+                            <span class="stat-label text-secondary small">Entregados</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card col-12 col-sm-6 col-xl-3">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-3 bg-white d-flex flex-row align-items-center gap-3">
+                        <div class="stat-icon bg-info bg-opacity-10 text-info rounded-4 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                            <i class="bi bi-currency-dollar fs-4"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value d-block fw-bold fs-4">S/ 312k</span>
+                            <span class="stat-label text-secondary small">Facturado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="orders-card card shadow-sm border-0 rounded-4 bg-white p-4">
+                <div class="card-header-custom mb-3">
+                    <h4 class="fw-bold text-dark">Últimos pedidos</h4>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="orders-table table table-hover align-middle">
+                        <thead class="table-light text-success">
+                            <tr>
+                                <th>N°</th>
+                                <th>Cliente</th>
+                                <th>Kilos</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-bold">P-2406</td>
+                                <td>Granja San Pedro</td>
+                                <td>1,200 kg</td>
+                                <td>S/ 4,860</td>
+                                <td><span class="status entregado badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3 py-2">Entregado</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">P-2405</td>
+                                <td>Avicola El Sol</td>
+                                <td>800 kg</td>
+                                <td>S/ 3,240</td>
+                                <td><span class="status en-ruta badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 rounded-pill px-3 py-2">En ruta</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">P-2404</td>
+                                <td>Postura Andina</td>
+                                <td>2,000 kg</td>
+                                <td>S/ 8,100</td>
+                                <td><span class="status preparando badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill px-3 py-2">Preparando</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">P-2403</td>
+                                <td>Don Lucho</td>
+                                <td>400 kg</td>
+                                <td>S/ 1,620</td>
+                                <td><span class="status pendiente badge bg-secondary bg-opacity-10 text-secondary border rounded-pill px-3 py-2">Pendiente</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">P-2402</td>
+                                <td>Avicola Vista</td>
+                                <td>600 kg</td>
+                                <td>S/ 2,430</td>
+                                <td><span class="status entregado badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3 py-2">Entregado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
